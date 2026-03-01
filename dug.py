@@ -201,7 +201,7 @@ REGRAS:
 
 
 def main():
-    api = 'AIzaSyCMIBh4vmZP0qBYg5yfkoKbjbHDCRbMBk4'
+    api = 'SUA_API_KEY'
     assistente = AssistenteIa(api)
     app = App(assistente)
 
@@ -216,3 +216,4 @@ def main():
     app.criar_pdf(dados, analise)
 
 main()
+
