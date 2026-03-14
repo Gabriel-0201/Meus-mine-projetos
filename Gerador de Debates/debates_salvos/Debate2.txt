@@ -1,0 +1,10 @@
+Defensor: ['É', 'imperativo', 'retornar', 'à', 'caverna,', 'pois', 'o', 'filósofo', '.', '.', '.']
+Contrariador: ['Retornar', 'é', 'fútil;', 'a', '"verdade"', '.', '.', '.']
+Defensor: ['A', 'futilidade', 'reside', 'em', 'reter', 'a', 'luz,', 'não', 'em', '.', '.', '.']
+Contrariador: ['A', 'futilidade', 'reside', 'em', 'impor', 'uma', 'luz', 'que', 'c', '.', '.', '.']
+Defensor: ['Não', 'se', 'impõe', 'a', 'verdade,', 'apenas', 'se', 'revela', 'o', 'caminho;', '.', '.', '.']
+Contrariador: ['Revelar', 'um', 'caminho', 'é', 'impor', 'uma', 'direção,', 'negando', 'a', 'autonomia', 'da', 'percepção', 'individual.', 'A', '"verdade"', 'do', 'exterior', 'é', 'apenas', 'mais', 'uma', 'sombra', 'projetada,', 'agora', 'por', 'quem', 'se', 'julga', 'iluminado.', '.', '.', '.']
+ATA:
+
+ ['O', 'debate', 'analisa', 'a', 'obrigação', 'de', 'retornar', 'à', 'caverna', 'para', 'alertar', 'os', 'prisioneiros,', 'focando', 'na', 'natureza', 'da', 'verdade', 'e', 'autonomia', 'individual.', 'O', 'defensor', 'argumenta', 'pelo', 'dever', 'de', 'revelar', 'o', 'caminho,', 'enquanto', 'o', 'contrari', '.', '.', '.'] 
+------------------------------

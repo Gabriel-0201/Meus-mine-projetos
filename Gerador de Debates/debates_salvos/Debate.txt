@@ -1,0 +1,10 @@
+Defensor: Erro: A API está instável no momento.
+Contrariador: Erro: A API está instável no momento.
+Defensor: Erro: A API está instável no momento.
+Contrariador: Erro: A API está instável no momento.
+Defensor: Erro: A API está instável no momento.
+Contrariador: Erro: A API está instável no momento.
+ATA:
+
+ Erro: A API está instável no momento. 
+------------------------------
