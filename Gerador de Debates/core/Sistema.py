@@ -1,48 +1,31 @@
 import os
+import re
 
 class Sistema:
-  def __init__(self, pasta_destino = 'debates_salvos'):
-    self.pasta_destino = pasta_destino
-    if not os.path.exists(self.pasta_destino): #garente que exeista uma pasta destino
-      os.makedirs(self.pasta_destino)
+  def __init__(self, pasta_main):
+    self.pasta_main = pasta_main
 
-  def gerar_nome_arquivo(self, base_nome:str): #responsavel por criar o arquivo
-    indice = 1
-    while True:
-      nome = f"{base_nome}{indice if indice > 1 else ''}.txt"
-      caminho = os.path.join(self.pasta_destino, nome)
-      if not os.path.exists(caminho):
-        return caminho
-      indice += 1
-  
-  def gerar_ata(self, analisador, dialogo_lista: list, tema: str, nucleo: str):
-    texto_debate = ""
-    for t in dialogo_lista:
-      texto_debate += f"{t['debatente']}: {t['argumento']}\n\n"
+  def salvar(self, nome_arquivo: str, conteudo: str):
+      # limpar nome do arquivo
+      nome_arquivo = re.sub(r'[\\/*?:"<>|]', "_", nome_arquivo)
 
-    prompt_analise = f"""
-        Como redator profissional, analise o debate abaixo sobre '{tema}'.
-        Foco principal: {nucleo}.
+      # checando se a pasta existe para criar
 
-        ESTRUTURA DA ATA:
-        1. INTRODUÇÃO: Resumo do objetivo do debate.
-        2. PONTOS DO DEFENSOR: Liste os 3 principais argumentos.
-        3. PONTOS DO CONTRARIADOR: Liste os 3 principais argumentos.
-        4. CONCLUSÃO FINAL: Avalie a consistência lógica de cada lado.
+      # caminho da pasta do script
+      base_dir = os.path.dirname(os.path.abspath(self.pasta_main))
 
-        TRANSCRICÃO DO DEBATE:
-        {texto_debate}
-        """
-    return analisador.gerar(prompt= prompt_analise)
+      pasta = os.path.join(base_dir, "Debates salvos")
+      os.makedirs(pasta, exist_ok=True)
 
-  def salvar(self, dialogo: list, ata: str, caminho_arq: str):
+      # salvando conteúdo na pasta
+      caminho = os.path.join(pasta, f"{nome_arquivo}.txt")
 
-    with open(caminho_arq, 'a', encoding= 'utf-8') as arquivo:
-      #savando o debate
-      for turno in dialogo:
-        arquivo.write(f"{turno['debatente']}: {turno['argumento']}\n")
+      #se o arquivo ja existir
+      if os.path.exists(caminho): 
+        return "Arquivo já existe!"
       
-      #savando a ata
-      arquivo.write(f"ATA:\n\n {ata} \n")
-        
-      arquivo.write("-" * 30 + "\n") # Separador de debates
+      # salvar conteúdo
+      with open(caminho, 'w', encoding='utf-8') as arquivo:
+          arquivo.write(conteudo)
+      
+      return "Arquivo salvo com sucesso!"
